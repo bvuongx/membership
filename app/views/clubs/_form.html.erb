@@ -1,0 +1,16 @@
+<%= form_for [@member, @club] do |f| %>
+<%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </p>
+
+</p>
+  <% f.fields_for :clubs do |builder| %>
+    <p>
+  <%= builder.label :name %><br>
+    <%= builder.text_area :name %>
+  </p>
+  <%= f.submit %>
+<% end %>

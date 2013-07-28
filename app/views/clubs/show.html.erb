@@ -1,0 +1,14 @@
+<div id='club'>
+  <%= simple_format(@club.name) %>
+</div>
+
+<ul id='clubs'>
+  <% @member.clubs.each do |club| %>
+<li>
+  <%= link_to club.name, [@member, club] %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to "Edit Club", [:edit, @member, @club] %>
+
